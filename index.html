@@ -1,200 +1,181 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Helvetica Neue'; min-height: 25.0px}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; min-height: 15.0px}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX 디자인 프로젝트: 수강 적합도 자가 진단 게임</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for a better look */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+        .question-section {
+            min-height: 150px; /* Ensure consistent height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .button-group button {
+            transition: all 0.2s ease-in-out;
+        }
+        .button-group button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .button-yes {
+            background-color: #4CAF50; /* Green for Yes */
+        }
+        .button-no {
+            background-color: #f44336; /* Red for No */
+        }
+        .button-yes:hover {
+            background-color: #45a049;
+        }
+        .button-no:hover {
+            background-color: #da342c;
+        }
+        .restart-button {
+            background-color: #3b82f6; /* Blue for Restart */
+        }
+        .restart-button:hover {
+            background-color: #2563eb;
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><b></b><br></p>
-<p class="p2"><br></p>
-<p class="p3">&lt;!DOCTYPE html&gt;</p>
-<p class="p3">&lt;html lang="ko"&gt;</p>
-<p class="p3">&lt;head&gt;</p>
-<p class="p3"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p3"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p3"><span class="Apple-converted-space">    </span>&lt;title&gt;UX 디자인 프로젝트: 수강 적합도 자가 진단 게임&lt;/title&gt;</p>
-<p class="p3"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS CDN --&gt;</p>
-<p class="p3"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
-<p class="p3"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>/* Custom font for a better look */</p>
-<p class="p3"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>background-color: #f0f4f8; /* Light background */</p>
-<p class="p3"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p3"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>max-width: 700px;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>background-color: #ffffff;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);</p>
-<p class="p3"><span class="Apple-converted-space">            </span>padding: 30px;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p3"><span class="Apple-converted-space">        </span>.question-section {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>min-height: 150px; /* Ensure consistent height */</p>
-<p class="p3"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p3"><span class="Apple-converted-space">        </span>.button-group button {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>transition: all 0.2s ease-in-out;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p3"><span class="Apple-converted-space">        </span>.button-group button:hover {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</p>
-<p class="p3"><span class="Apple-converted-space">            </span>box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p3"><span class="Apple-converted-space">        </span>.button-yes {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>background-color: #4CAF50; /* Green for Yes */</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p3"><span class="Apple-converted-space">        </span>.button-no {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>background-color: #f44336; /* Red for No */</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p3"><span class="Apple-converted-space">        </span>.button-yes:hover {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>background-color: #45a049;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p3"><span class="Apple-converted-space">        </span>.button-no:hover {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>background-color: #da342c;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p3"><span class="Apple-converted-space">        </span>.restart-button {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>background-color: #3b82f6; /* Blue for Restart */</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p3"><span class="Apple-converted-space">        </span>.restart-button:hover {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>background-color: #2563eb;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p3"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p3">&lt;/head&gt;</p>
-<p class="p3">&lt;body&gt;</p>
-<p class="p3"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>&lt;h1 class="text-3xl font-bold text-gray-800 mb-6"&gt;UX 디자인 프로젝트: 수강 적합도 자가 진단 게임&lt;/h1&gt;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>&lt;p class="text-gray-600 mb-8"&gt;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>안녕하세요, UX 디자인 프로젝트 수강을 고민하고 계신가요? 이 수업은 프로젝트 중심의 실습 과정으로, UX/UI 디자인의 기본기를 갖춘 학생들에게 최적화되어 있습니다. 아래 질문에 '예' 또는 '아니오'로 솔직하게 답해보며, 본 수업이 당신에게 적합한지 함께 알아봅시다!</p>
-<p class="p3"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">        </span>&lt;!-- Question Section --&gt;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>&lt;div id="questionSection" class="question-section mb-8 p-6 bg-blue-50 rounded-lg shadow-inner"&gt;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>&lt;p id="questionCategory" class="text-sm font-semibold text-blue-600 mb-2"&gt;&lt;/p&gt;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>&lt;p id="questionText" class="text-xl font-medium text-gray-700 mb-6"&gt;&lt;/p&gt;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="button-group flex space-x-4"&gt;</p>
-<p class="p3"><span class="Apple-converted-space">                </span>&lt;button id="yesButton" class="button-yes text-white font-bold py-3 px-8 rounded-full shadow-lg"&gt;예&lt;/button&gt;</p>
-<p class="p3"><span class="Apple-converted-space">                </span>&lt;button id="noButton" class="button-no text-white font-bold py-3 px-8 rounded-full shadow-lg"&gt;아니오&lt;/button&gt;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">        </span>&lt;!-- Result Section (hidden by default) --&gt;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>&lt;div id="resultSection" class="hidden p-8 bg-green-50 rounded-lg shadow-lg"&gt;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>&lt;h2 class="text-2xl font-bold text-gray-800 mb-4"&gt;진단 결과&lt;/h2&gt;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>&lt;p id="resultText" class="text-lg text-gray-700 mb-6"&gt;&lt;/p&gt;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>&lt;button id="restartButton" class="restart-button text-white font-bold py-3 px-8 rounded-full shadow-lg"&gt;다시 시작하기&lt;/button&gt;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p3"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>// Questions array with categories</p>
-<p class="p3"><span class="Apple-converted-space">        </span>const questions = [</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 1: UX/UI 디자인 개념 이해도", text: "사용자 경험(UX)과 사용자 인터페이스(UI)라는 단어가 낯설지 않고, 각각이 무엇을 의미하는지 대략적으로 설명할 수 있다." },</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 1: UX/UI 디자인 개념 이해도", text: "정보 아키텍처(IA)가 웹사이트나 앱의 정보 구조를 설계하는 것임을 알고 있다." },</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 1: UX/UI 디자인 개념 이해도", text: "와이어프레임과 프로토타입이 무엇인지, 그리고 디자인 과정에서 어떤 역할을 하는지 알고 있다." },</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 1: UX/UI 디자인 개념 이해도", text: "유용성(Usability)과 접근성(Accessibility)이 좋은 사용자 경험을 만드는 데 중요하다고 생각하며, 그 개념을 이해하고 있다." },</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 2: Figma 툴 활용 능력", text: "Figma를 열고, 새로운 프레임을 만들고, 그 안에 텍스트나 도형을 자유롭게 배치할 수 있다." },</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 2: Figma 툴 활용 능력", text: "Figma에서 레이어를 관리하고, 여러 요소를 그룹으로 묶거나 정렬하는 기본적인 기능을 사용할 수 있다." },</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 2: Figma 툴 활용 능력", text: "Figma의 컴포넌트(Component) 기능을 활용하여 버튼이나 아이콘을 만들고 재사용해 본 경험이 있다." },</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 2: Figma 툴 활용 능력", text: "오토 레이아웃(Auto Layout)이 무엇인지 알고 있으며, 간단한 화면에 적용하여 요소들의 배열을 조절할 수 있다." },</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 2: Figma 툴 활용 능력", text: "Figma에서 여러 화면을 연결하여 클릭했을 때 다음 화면으로 넘어가는 등 간단한 프로토타입을 만들고 시연할 수 있다." },</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 2: Figma 툴 활용 능력", text: "Figma 파일 공유 기능을 통해 다른 사람과 함께 작업해 본 경험이 있거나, 댓글 기능을 사용해 본 경험이 있다." },</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 3: 마음가짐 및 준비도", text: "스스로 문제를 정의하고, 그 문제에 대한 디자인적 해결 방안을 고민하는 것을 즐긴다." },</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 3: 마음가짐 및 준비도", text: "팀 프로젝트에서 다른 사람들과 아이디어를 나누고, 협력하여 결과물을 만들어내는 것에 적극적으로 참여할 의지가 있다." },</p>
-<p class="p3"><span class="Apple-converted-space">            </span>{ category: "Part 3: 마음가짐 및 준비도", text: "수업 외적으로도 UX/UI 디자인 관련 자료를 찾아보고, 새로운 기술이나 트렌드를 학습하는 데 관심이 많다." }</p>
-<p class="p3"><span class="Apple-converted-space">        </span>];</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">        </span>let currentQuestionIndex = 0;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>let score = 0;</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">        </span>// Get DOM elements</p>
-<p class="p3"><span class="Apple-converted-space">        </span>const questionSection = document.getElementById('questionSection');</p>
-<p class="p3"><span class="Apple-converted-space">        </span>const questionCategory = document.getElementById('questionCategory');</p>
-<p class="p3"><span class="Apple-converted-space">        </span>const questionText = document.getElementById('questionText');</p>
-<p class="p3"><span class="Apple-converted-space">        </span>const yesButton = document.getElementById('yesButton');</p>
-<p class="p3"><span class="Apple-converted-space">        </span>const noButton = document.getElementById('noButton');</p>
-<p class="p3"><span class="Apple-converted-space">        </span>const resultSection = document.getElementById('resultSection');</p>
-<p class="p3"><span class="Apple-converted-space">        </span>const resultText = document.getElementById('resultText');</p>
-<p class="p3"><span class="Apple-converted-space">        </span>const restartButton = document.getElementById('restartButton');</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">        </span>// Function to display the current question</p>
-<p class="p3"><span class="Apple-converted-space">        </span>function displayQuestion() {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>if (currentQuestionIndex &lt; questions.length) {</p>
-<p class="p3"><span class="Apple-converted-space">                </span>questionCategory.textContent = questions[currentQuestionIndex].category;</p>
-<p class="p3"><span class="Apple-converted-space">                </span>questionText.textContent = questions[currentQuestionIndex].text;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>} else {</p>
-<p class="p3"><span class="Apple-converted-space">                </span>showResult();</p>
-<p class="p3"><span class="Apple-converted-space">            </span>}</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">        </span>// Function to show the result based on the score</p>
-<p class="p3"><span class="Apple-converted-space">        </span>function showResult() {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>questionSection.classList.add('hidden');</p>
-<p class="p3"><span class="Apple-converted-space">            </span>resultSection.classList.remove('hidden');</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">            </span>let diagnosis = '';</p>
-<p class="p3"><span class="Apple-converted-space">            </span>if (score &gt;= 10) {</p>
-<p class="p3"><span class="Apple-converted-space">                </span>diagnosis = `🎉 축하합니다! 당신은 UX 디자인 프로젝트 수업에 필요한 기본적인 역량을 잘 갖추고 있는 것으로 보입니다. 수업에 참여하시면 많은 것을 배우고, 흥미로운 프로젝트를 경험할 수 있을 것입니다. 적극적인 참여를 환영합니다! (총 '예' ${score}개)`;</p>
-<p class="p3"><span class="Apple-converted-space">                </span>resultSection.classList.remove('bg-green-50');</p>
-<p class="p3"><span class="Apple-converted-space">                </span>resultSection.classList.add('bg-yellow-50'); // Change background for good result</p>
-<p class="p3"><span class="Apple-converted-space">            </span>} else if (score &gt;= 7) {</p>
-<p class="p3"><span class="Apple-converted-space">                </span>diagnosis = `🤔 수업 참여는 가능하지만, 몇몇 영역에서 보충 학습이 필요할 수 있습니다. 특히 'Figma 툴 활용 능력' 부분에서 '아니오'가 많다면, 수업 시작 전 관련 온라인 튜토리얼이나 기초 강의를 통해 미리 준비하시기를 강력히 권장합니다. 부족한 부분을 채우신다면 충분히 좋은 성과를 낼 수 있습니다! (총 '예' ${score}개)`;</p>
-<p class="p3"><span class="Apple-converted-space">                </span>resultSection.classList.remove('bg-green-50');</p>
-<p class="p3"><span class="Apple-converted-space">                </span>resultSection.classList.add('bg-blue-50'); // Change background for moderate result</p>
-<p class="p3"><span class="Apple-converted-space">            </span>} else {</p>
-<p class="p3"><span class="Apple-converted-space">                </span>diagnosis = `💡 이 수업은 실무 프로젝트와 유사한 방식으로 진행되며, 일정 수준의 사전 지식과 툴 활용 능력이 요구됩니다. 현재 상태로는 수업 내용을 따라가거나 프로젝트를 수행하는 데 큰 어려움을 겪을 가능성이 높습니다. 이번 학기에는 UX/UI 디자인 기초 수업 또는 Figma 기초 강의를 먼저 수강하며 기본기를 다진 후, 다음 학기에 본 수업을 수강하시는 것을 고려해보시길 추천합니다. 당신의 열정을 응원합니다! (총 '예' ${score}개)`;</p>
-<p class="p3"><span class="Apple-converted-space">                </span>resultSection.classList.remove('bg-green-50');</p>
-<p class="p3"><span class="Apple-converted-space">                </span>resultSection.classList.add('bg-red-50'); // Change background for low result</p>
-<p class="p3"><span class="Apple-converted-space">            </span>}</p>
-<p class="p3"><span class="Apple-converted-space">            </span>resultText.textContent = diagnosis;</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">        </span>// Event listener for Yes button</p>
-<p class="p3"><span class="Apple-converted-space">        </span>yesButton.addEventListener('click', () =&gt; {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>score++;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>currentQuestionIndex++;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>displayQuestion();</p>
-<p class="p3"><span class="Apple-converted-space">        </span>});</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">        </span>// Event listener for No button</p>
-<p class="p3"><span class="Apple-converted-space">        </span>noButton.addEventListener('click', () =&gt; {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>currentQuestionIndex++;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>displayQuestion();</p>
-<p class="p3"><span class="Apple-converted-space">        </span>});</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">        </span>// Event listener for Restart button</p>
-<p class="p3"><span class="Apple-converted-space">        </span>restartButton.addEventListener('click', () =&gt; {</p>
-<p class="p3"><span class="Apple-converted-space">            </span>currentQuestionIndex = 0;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>score = 0;</p>
-<p class="p3"><span class="Apple-converted-space">            </span>resultSection.classList.add('hidden');</p>
-<p class="p3"><span class="Apple-converted-space">            </span>questionSection.classList.remove('hidden');</p>
-<p class="p3"><span class="Apple-converted-space">            </span>resultSection.classList.remove('bg-yellow-50', 'bg-blue-50', 'bg-red-50'); // Reset background</p>
-<p class="p3"><span class="Apple-converted-space">            </span>resultSection.classList.add('bg-green-50'); // Default background</p>
-<p class="p3"><span class="Apple-converted-space">            </span>displayQuestion();</p>
-<p class="p3"><span class="Apple-converted-space">        </span>});</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">        </span>// Initial display of the first question</p>
-<p class="p3"><span class="Apple-converted-space">        </span>displayQuestion();</p>
-<p class="p3"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p3">&lt;/body&gt;</p>
-<p class="p3">&lt;/html&gt;</p>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">UX 디자인 프로젝트: 수강 적합도 자가 진단 게임</h1>
+        <p class="text-gray-600 mb-8">
+            안녕하세요, UX 디자인 프로젝트 수강을 고민하고 계신가요? 이 수업은 프로젝트 중심의 실습 과정으로, UX/UI 디자인의 기본기를 갖춘 학생들에게 최적화되어 있습니다. 아래 질문에 '예' 또는 '아니오'로 솔직하게 답해보며, 본 수업이 당신에게 적합한지 함께 알아봅시다!
+        </p>
+
+        <!-- Question Section -->
+        <div id="questionSection" class="question-section mb-8 p-6 bg-blue-50 rounded-lg shadow-inner">
+            <p id="questionCategory" class="text-sm font-semibold text-blue-600 mb-2"></p>
+            <p id="questionText" class="text-xl font-medium text-gray-700 mb-6"></p>
+            <div class="button-group flex space-x-4">
+                <button id="yesButton" class="button-yes text-white font-bold py-3 px-8 rounded-full shadow-lg">예</button>
+                <button id="noButton" class="button-no text-white font-bold py-3 px-8 rounded-full shadow-lg">아니오</button>
+            </div>
+        </div>
+
+        <!-- Result Section (hidden by default) -->
+        <div id="resultSection" class="hidden p-8 bg-green-50 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">진단 결과</h2>
+            <p id="resultText" class="text-lg text-gray-700 mb-6"></p>
+            <button id="restartButton" class="restart-button text-white font-bold py-3 px-8 rounded-full shadow-lg">다시 시작하기</button>
+        </div>
+    </div>
+
+    <script>
+        // Questions array with categories
+        const questions = [
+            { category: "Part 1: UX/UI 디자인 개념 이해도", text: "사용자 경험(UX)과 사용자 인터페이스(UI)라는 단어가 낯설지 않고, 각각이 무엇을 의미하는지 대략적으로 설명할 수 있다." },
+            { category: "Part 1: UX/UI 디자인 개념 이해도", text: "정보 아키텍처(IA)가 웹사이트나 앱의 정보 구조를 설계하는 것임을 알고 있다." },
+            { category: "Part 1: UX/UI 디자인 개념 이해도", text: "와이어프레임과 프로토타입이 무엇인지, 그리고 디자인 과정에서 어떤 역할을 하는지 알고 있다." },
+            { category: "Part 1: UX/UI 디자인 개념 이해도", text: "유용성(Usability)과 접근성(Accessibility)이 좋은 사용자 경험을 만드는 데 중요하다고 생각하며, 그 개념을 이해하고 있다." },
+            { category: "Part 2: Figma 툴 활용 능력", text: "Figma를 열고, 새로운 프레임을 만들고, 그 안에 텍스트나 도형을 자유롭게 배치할 수 있다." },
+            { category: "Part 2: Figma 툴 활용 능력", text: "Figma에서 레이어를 관리하고, 여러 요소를 그룹으로 묶거나 정렬하는 기본적인 기능을 사용할 수 있다." },
+            { category: "Part 2: Figma 툴 활용 능력", text: "Figma의 컴포넌트(Component) 기능을 활용하여 버튼이나 아이콘을 만들고 재사용해 본 경험이 있다." },
+            { category: "Part 2: Figma 툴 활용 능력", text: "오토 레이아웃(Auto Layout)이 무엇인지 알고 있으며, 간단한 화면에 적용하여 요소들의 배열을 조절할 수 있다." },
+            { category: "Part 2: Figma 툴 활용 능력", text: "Figma에서 여러 화면을 연결하여 클릭했을 때 다음 화면으로 넘어가는 등 간단한 프로토타입을 만들고 시연할 수 있다." },
+            { category: "Part 2: Figma 툴 활용 능력", text: "Figma 파일 공유 기능을 통해 다른 사람과 함께 작업해 본 경험이 있거나, 댓글 기능을 사용해 본 경험이 있다." },
+            { category: "Part 3: 마음가짐 및 준비도", text: "스스로 문제를 정의하고, 그 문제에 대한 디자인적 해결 방안을 고민하는 것을 즐긴다." },
+            { category: "Part 3: 마음가짐 및 준비도", text: "팀 프로젝트에서 다른 사람들과 아이디어를 나누고, 협력하여 결과물을 만들어내는 것에 적극적으로 참여할 의지가 있다." },
+            { category: "Part 3: 마음가짐 및 준비도", text: "수업 외적으로도 UX/UI 디자인 관련 자료를 찾아보고, 새로운 기술이나 트렌드를 학습하는 데 관심이 많다." }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        // Get DOM elements
+        const questionSection = document.getElementById('questionSection');
+        const questionCategory = document.getElementById('questionCategory');
+        const questionText = document.getElementById('questionText');
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const resultSection = document.getElementById('resultSection');
+        const resultText = document.getElementById('resultText');
+        const restartButton = document.getElementById('restartButton');
+
+        // Function to display the current question
+        function displayQuestion() {
+            if (currentQuestionIndex < questions.length) {
+                questionCategory.textContent = questions[currentQuestionIndex].category;
+                questionText.textContent = questions[currentQuestionIndex].text;
+            } else {
+                showResult();
+            }
+        }
+
+        // Function to show the result based on the score
+        function showResult() {
+            questionSection.classList.add('hidden');
+            resultSection.classList.remove('hidden');
+
+            let diagnosis = '';
+            if (score >= 10) {
+                diagnosis = `🎉 축하합니다! 당신은 UX 디자인 프로젝트 수업에 필요한 기본적인 역량을 잘 갖추고 있는 것으로 보입니다. 수업에 참여하시면 많은 것을 배우고, 흥미로운 프로젝트를 경험할 수 있을 것입니다. 적극적인 참여를 환영합니다! (총 '예' ${score}개)`;
+                resultSection.classList.remove('bg-green-50');
+                resultSection.classList.add('bg-yellow-50'); // Change background for good result
+            } else if (score >= 7) {
+                diagnosis = `🤔 수업 참여는 가능하지만, 몇몇 영역에서 보충 학습이 필요할 수 있습니다. 특히 'Figma 툴 활용 능력' 부분에서 '아니오'가 많다면, 수업 시작 전 관련 온라인 튜토리얼이나 기초 강의를 통해 미리 준비하시기를 강력히 권장합니다. 부족한 부분을 채우신다면 충분히 좋은 성과를 낼 수 있습니다! (총 '예' ${score}개)`;
+                resultSection.classList.remove('bg-green-50');
+                resultSection.classList.add('bg-blue-50'); // Change background for moderate result
+            } else {
+                diagnosis = `💡 이 수업은 실무 프로젝트와 유사한 방식으로 진행되며, 일정 수준의 사전 지식과 툴 활용 능력이 요구됩니다. 현재 상태로는 수업 내용을 따라가거나 프로젝트를 수행하는 데 큰 어려움을 겪을 가능성이 높습니다. 이번 학기에는 UX/UI 디자인 기초 수업 또는 Figma 기초 강의를 먼저 수강하며 기본기를 다진 후, 다음 학기에 본 수업을 수강하시는 것을 고려해보시길 추천합니다. 당신의 열정을 응원합니다! (총 '예' ${score}개)`;
+                resultSection.classList.remove('bg-green-50');
+                resultSection.classList.add('bg-red-50'); // Change background for low result
+            }
+            resultText.textContent = diagnosis;
+        }
+
+        // Event listener for Yes button
+        yesButton.addEventListener('click', () => {
+            score++;
+            currentQuestionIndex++;
+            displayQuestion();
+        });
+
+        // Event listener for No button
+        noButton.addEventListener('click', () => {
+            currentQuestionIndex++;
+            displayQuestion();
+        });
+
+        // Event listener for Restart button
+        restartButton.addEventListener('click', () => {
+            currentQuestionIndex = 0;
+            score = 0;
+            resultSection.classList.add('hidden');
+            questionSection.classList.remove('hidden');
+            resultSection.classList.remove('bg-yellow-50', 'bg-blue-50', 'bg-red-50'); // Reset background
+            resultSection.classList.add('bg-green-50'); // Default background
+            displayQuestion();
+        });
+
+        // Initial display of the first question
+        displayQuestion();
+    </script>
 </body>
 </html>
